@@ -59,10 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           FilterChip(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
+                              side: const BorderSide(
+                                color: Colors.black,
+                              ),
                             ),
                             selected: true,
                             onSelected: (_) {},
                             label: Text('All'),
+                            showCheckmark: false,
                           ),
                           ChoiceChip(selected: false, label: Text('Manga')),
                         ],
