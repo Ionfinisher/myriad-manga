@@ -54,23 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     _buildHeader(context),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                      child: Row(
-                        children: [
-                          FilterChip(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                              side: const BorderSide(
-                                color: Colors.black,
-                              ),
-                            ),
-                            selected: true,
-                            onSelected: (_) {},
-                            label: Text('All'),
-                            showCheckmark: false,
-                          ),
-                          ChoiceChip(selected: false, label: Text('Manga')),
-                        ],
-                      ),
+                      child: _buildFilterChipsList(context),
                     ),
                   ],
                 ),
@@ -124,5 +108,57 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildImage(BuildContext context, String imagePath) {
     return Image.asset(imagePath, fit: BoxFit.cover);
+  }
+
+  Widget _buildFilterChipsList(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        FilterChip(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: const BorderSide(color: Color.fromARGB(155, 236, 231, 231)),
+          ),
+          selected: true,
+          onSelected: (_) {},
+          label: Text('All', style: TextStyle(color: Colors.white)),
+          showCheckmark: false,
+          selectedColor: Color.fromARGB(100, 46, 49, 76),
+        ),
+        FilterChip(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: const BorderSide(color: Color.fromARGB(155, 236, 231, 231)),
+          ),
+          selected: true,
+          onSelected: (_) {},
+          label: Text('Manga'),
+          showCheckmark: false,
+        ),
+
+        FilterChip(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: const BorderSide(color: Color.fromARGB(155, 236, 231, 231)),
+          ),
+          selected: true,
+          onSelected: (_) {},
+          label: Text('Manhwa'),
+          showCheckmark: false,
+          color: ,
+        ),
+
+        FilterChip(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: const BorderSide(color: Color.fromARGB(155, 236, 231, 231)),
+          ),
+          selected: true,
+          onSelected: (_) {},
+          label: Text('Manhua'),
+          showCheckmark: false,
+        ),
+      ],
+    );
   }
 }
